@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - logicalFilePath: 20240524-10-create-table-book.yaml
+  - changeSet:
+      id: 20242205-1
+      author: RevanHajiyev
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: UUID
+              - column:
+                  constraints:
+                    nullable: false
+                  name: username
+                  remarks: username
+                  type: VARCHAR2(100 BYTE)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  remarks: email
+                  type: VARCHAR2(100 BYTE)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  remarks: password
+                  type: VARCHAR2(100 BYTE)
+            remarks: User entity
+            tableName: USER

@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT:8088}
+  servlet:
+    context-path: /abbtech-bookstore-user-ms
+spring:
+  application:
+    name: abbtech-bookstore-user-ms
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:6432/abb_tech
+    username: psg_user
+    password: pass
+    hikari:
+      schema: user
+  main:
+    banner-mode: off
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: true
+  liquibase:
+    enabled: ${LIQUIBASE_ENABLE:true}
+    change-log: classpath:db/changelog/db.changelog.yml
+    default-schema: user
+
